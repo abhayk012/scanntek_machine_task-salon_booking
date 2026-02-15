@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import "./styles/globals.css";
 import RQuery from "./components/RQuery.tsx";
 import { Toaster } from "sonner";
 import { BrowserRouter } from "react-router";
@@ -13,5 +13,5 @@ createRoot(document.getElementById("root")!).render(
         <AppRoutes />
       </RQuery>
     </BrowserRouter>
-  </div>
+  </div>,
 );
