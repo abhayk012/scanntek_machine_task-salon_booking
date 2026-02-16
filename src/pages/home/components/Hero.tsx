@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2c2c2c] mb-2">
                 Artisan Products
               </h3>
-              <p className="text-xs text-[#a89f94] font-medium uppercase tracking-widest">
+              <p className="text-xs text-[#ffffff] font-medium uppercase tracking-widest">
                 Sustainably Sourced
               </p>
             </div>
@@ -63,18 +63,18 @@ const Hero: React.FC = () => {
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2c2c2c] mb-2">
                 Master Stylists
               </h3>
-              <p className="text-xs text-[#a89f94] font-medium uppercase tracking-widest">
+              <p className="text-xs text-[#ffffff] font-medium uppercase tracking-widest">
                 Visionary Expertise
               </p>
             </div>
             <div className="flex flex-col items-center">
               <div className="mb-6">
-                <Heart className="w-12 h-12 text-[#e8c1c5]" />
+                <Heart className="w-12 h-12 text-[#e4aeae]" />
               </div>
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2c2c2c] mb-2">
                 Bespoke Rituals
               </h3>
-              <p className="text-xs text-[#a89f94] font-medium uppercase tracking-widest">
+              <p className="text-xs text-[#ffffff] font-medium uppercase tracking-widest">
                 Curated for You
               </p>
             </div>
