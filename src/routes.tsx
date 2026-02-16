@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Services from "./pages/services/Services";
 import Booking from "./pages/booking/Booking";
 import ServiceOptions from "./pages/booking/ServiceOptions";
+import History from "./pages/booking/History";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -65,6 +66,7 @@ const routesConfig = [
     element: <ServiceOptions />,
     title: "Select Service Option",
   },
+  { path: "/history", element: <History />, title: "Booking History" },
 ];
 
 const AppRoutes = () => {

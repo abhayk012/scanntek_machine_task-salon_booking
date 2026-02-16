@@ -17,7 +17,7 @@ import {
   startOfToday,
 } from "date-fns";
 import { cn } from "@/lib/utils";
-import { isDateFullyBooked } from "../../../data/mockData";
+import { isDateFullyBooked } from "@/data/mockData";
 
 interface CustomCalendarProps {
   selectedDate: string;
