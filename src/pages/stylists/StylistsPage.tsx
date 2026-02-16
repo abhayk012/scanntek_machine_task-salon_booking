@@ -104,7 +104,7 @@ const StylistsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <CardContent className="w-full md:w-[55%] p-8 md:p-10 flex flex-col">
+                    <CardContent className="w-full md:w-[55%] p-6 sm:p-8 md:p-10 flex flex-col">
                       <div className="mb-6">
                         <div className="flex items-center gap-2 mb-2">
                           <div className="flex">

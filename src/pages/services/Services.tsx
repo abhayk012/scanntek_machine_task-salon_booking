@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { services } from "../../data/mockData";
 import { Button } from "../../components/ui/button";
 import { cn } from "@/lib/utils";
-import { Filter, ChevronRight, Clock, Star, Sparkles } from "lucide-react";
+import { Filter, ChevronRight, Clock, Sparkles } from "lucide-react";
 
 const categories = ["All", "Hair", "Makeup", "Nails", "Skincare"];
 
@@ -16,7 +16,7 @@ const Services: React.FC = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="min-h-screen bg-warm-white pb-20">
       {/* Premium Header */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[#F5F0E9]/40 -z-10" />
@@ -106,16 +106,18 @@ const Services: React.FC = () => {
                   </div>
 
                   {/* Content Container */}
-                  <div className="absolute inset-0 p-10 flex flex-col justify-end transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-                    <div className="space-y-4">
+                  <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end transform transition-transform duration-500 md:group-hover:translate-y-[-10px]">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className="flex items-center gap-2">
-                        <span className="text-3xl">{service.icon}</span>
-                        <h3 className="text-3xl font-bold text-white leading-tight">
+                        <span className="text-2xl sm:text-3xl">
+                          {service.icon}
+                        </span>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
                           {service.name}
                         </h3>
                       </div>
 
-                      <p className="text-white/70 text-sm font-medium leading-relaxed line-clamp-2 pr-4 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                      <p className="text-white/80 text-sm font-medium leading-relaxed line-clamp-2 pr-4 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
                         {service.description}
                       </p>
 
@@ -124,22 +126,22 @@ const Services: React.FC = () => {
                           <span className="text-[10px] font-bold text-white/50 uppercase tracking-widest mb-1">
                             Duration & Price
                           </span>
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-2 sm:gap-3">
                             <div className="flex items-center gap-1.5 text-white/90">
                               <Clock className="w-3 h-3" />
-                              <span className="text-sm font-bold">
+                              <span className="text-xs sm:text-sm font-bold">
                                 {service.duration}m
                               </span>
                             </div>
                             <div className="w-1 h-1 rounded-full bg-white/20" />
-                            <span className="text-xl font-bold text-white">
+                            <span className="text-lg sm:text-xl font-bold text-white">
                               ${service.price}
                             </span>
                           </div>
                         </div>
 
                         <Link to="/booking">
-                          <Button className="h-14 w-14 rounded-full bg-[#B76E79] hover:bg-[#A65E69] text-white p-0 shadow-xl shadow-black/20 transition-all active:scale-90">
+                          <Button className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#B76E79] hover:bg-[#A65E69] text-white p-0 shadow-xl shadow-black/20 transition-all active:scale-90">
                             <ChevronRight className="w-6 h-6" />
                           </Button>
                         </Link>

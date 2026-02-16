@@ -59,8 +59,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="John"
-                        disabled={disabled}
+                        placeholder="Enter your name"
                         className="h-12 border-zinc-200 focus:border-black transition-all"
                       />
                     </FormControl>
@@ -77,8 +76,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="Doe"
-                        disabled={disabled}
+                        placeholder="Enter last name"
                         className="h-12 border-zinc-200 focus:border-black transition-all"
                       />
                     </FormControl>
@@ -98,8 +96,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                     <Input
                       {...field}
                       type="email"
-                      placeholder="email@example.com"
-                      disabled={disabled}
+                      placeholder="Enter your email"
                       className="h-12 border-zinc-200 focus:border-black transition-all"
                     />
                   </FormControl>
@@ -119,12 +116,11 @@ const BookingForm: React.FC<BookingFormProps> = ({
                       <FormControl>
                         <select
                           {...field}
-                          disabled={disabled}
                           className="w-full h-12 px-3 bg-white border border-zinc-200 rounded-lg text-sm focus:outline-none focus:border-black transition-all appearance-none cursor-pointer"
                         >
+                          <option value="+91">🇮🇳 +91</option>
                           <option value="+1">🇺🇸 +1</option>
                           <option value="+44">🇬🇧 +44</option>
-                          <option value="+91">🇮🇳 +91</option>
                           <option value="+61">🇦🇺 +61</option>
                         </select>
                       </FormControl>
@@ -139,8 +135,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="Phone number"
-                          disabled={disabled}
+                          placeholder="Enter your phone number"
                           className="h-12 border-zinc-200 focus:border-black transition-all"
                         />
                       </FormControl>
@@ -152,23 +147,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
             </div>
           </div>
 
-          <div className="space-y-6 pt-6 border-t border-zinc-100">
-            <h3 className="text-xl font-bold text-black">Payment</h3>
-            <div className="p-4 border-2 border-black rounded-xl bg-zinc-50 flex items-center justify-between cursor-pointer">
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full border-4 border-black bg-white" />
-                <span className="font-bold text-sm">Credit or debit card</span>
-              </div>
-              <div className="flex gap-1">
-                <div className="w-8 h-5 bg-zinc-200 rounded" />
-                <div className="w-8 h-5 bg-zinc-200 rounded" />
-                <div className="w-8 h-5 bg-zinc-200 rounded" />
-              </div>
-            </div>
-            <p className="text-xs text-zinc-400 font-medium">
-              You will not be charged until the time of your appointment.
-            </p>
-          </div>
+          
 
           <Button
             type="submit"

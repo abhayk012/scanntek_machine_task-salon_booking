@@ -11,7 +11,7 @@ export const services: Service[] = [
       "Premium hair cutting and styling service tailored to your needs.",
     icon: "✂️",
     imageUrl:
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
     hasVariablePricing: true,
     variants: [
       { id: "regular", name: "Regular Cut", duration: 45, priceModifier: 0 },
@@ -32,7 +32,7 @@ export const services: Service[] = [
     description: "Professional hair styling for any occasion.",
     icon: "💇‍♀️",
     imageUrl:
-      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80",
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop",
     hasVariablePricing: false,
   },
   {
@@ -44,7 +44,7 @@ export const services: Service[] = [
     description: "Expert hair coloring services using high-quality products.",
     icon: "🎨",
     imageUrl:
-      "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80",
+      "https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop",
     hasVariablePricing: true,
     variants: [
       {
@@ -71,7 +71,7 @@ export const services: Service[] = [
       "Relaxing hair spa treatments to nourish and revitalize your hair.",
     icon: "🧖‍♀️",
     imageUrl:
-      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80",
+      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=800&auto=format&fit=crop",
     hasVariablePricing: false,
   },
   {
@@ -83,7 +83,7 @@ export const services: Service[] = [
     description: "Elegant and long-lasting bridal makeup for your special day.",
     icon: "💄",
     imageUrl:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80",
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop",
     hasVariablePricing: false,
   },
   {
@@ -96,7 +96,7 @@ export const services: Service[] = [
       "Durable and stylish gel nail treatment with custom art options.",
     icon: "💅",
     imageUrl:
-      "https://images.unsplash.com/photo-1604654894611-6973b376cbde?w=800&q=80",
+      "https://images.unsplash.com/photo-1604654894611-6973b376cbde?q=80&w=800&auto=format&fit=crop",
     hasVariablePricing: false,
   },
 ];
@@ -108,7 +108,7 @@ export const stylists: Stylist[] = [
     specialty: ["Hair Styling", "Coloring", "Extensions"],
     bio: "Expert stylist with 8 years of experience in creating stunning hair transformations.",
     photoUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=400&h=600&auto=format&fit=crop",
     experience: 8,
     rating: 4.9,
     reviewCount: 156,
@@ -132,7 +132,7 @@ export const stylists: Stylist[] = [
     specialty: ["Makeup", "Bridal", "Special Events"],
     bio: "Professional makeup artist specializing in bridal and event makeup.",
     photoUrl:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1588619491811-929007204423?q=80&w=400&h=600&auto=format&fit=crop",
     experience: 6,
     rating: 4.8,
     reviewCount: 124,
@@ -155,7 +155,7 @@ export const stylists: Stylist[] = [
     specialty: ["Nail Art", "Gel Nails", "Nail Design"],
     bio: "Creative nail artist creating beautiful and intricate nail designs.",
     photoUrl:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1610665510214-74d110f03886?q=80&w=400&h=600&auto=format&fit=crop",
     experience: 4,
     rating: 4.7,
     reviewCount: 98,
@@ -179,7 +179,7 @@ export const stylists: Stylist[] = [
     specialty: ["Skincare", "Facials", "Spa Treatments"],
     bio: "Certified esthetician providing rejuvenating skincare and spa treatments.",
     photoUrl:
-      "https://images.unsplash.com/photo-1517070213202-1e1028e4e84e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&h=600&auto=format&fit=crop",
     experience: 7,
     rating: 4.9,
     reviewCount: 142,
@@ -202,7 +202,7 @@ export const stylists: Stylist[] = [
     specialty: ["Hair Cutting", "Keratin Treatments", "Blow Dry"],
     bio: "Precision hair cutter with expertise in modern cuts and treatments.",
     photoUrl:
-      "https://images.unsplash.com/photo-1516891684159-5ac92a2edef6?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=400&h=600&auto=format&fit=crop",
     experience: 5,
     rating: 4.8,
     reviewCount: 167,

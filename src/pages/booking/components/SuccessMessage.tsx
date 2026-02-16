@@ -32,8 +32,9 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
       ? getServiceVariant(service!.id, variantId)
       : null;
 
+    const basePrice = stylist?.prices[service!.id] || service?.price || 0;
     const duration = variant ? variant.duration : service?.duration || 0;
-    const price = variant ? variant.price : service?.price || 0; // assuming service/variant has price
+    const price = basePrice + (variant?.priceModifier || 0);
 
     totalDuration += duration;
 
