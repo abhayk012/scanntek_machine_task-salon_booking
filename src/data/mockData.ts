@@ -22,7 +22,7 @@ export const services: Service[] = [
     price: 45,
     description:
       "Precision haircut and styling tailored to enhance your natural beauty.",
-    icon: "✂️",
+    icon: "Scissors",
     imageUrl: "https://5.imimg.com/data5/GLADMIN/Default/2022/6/SD/BO/IV/85062/women-hair-cut-services-250x250.jpg",
     hasVariablePricing: true,
     variants: [
@@ -42,7 +42,7 @@ export const services: Service[] = [
     duration: 30,
     price: 60,
     description: "Professional styling for events, parties, or everyday glam.",
-    icon: "💇‍♀️",
+    icon: "Wind",
     imageUrl: "https://www.southernliving.com/thmb/af4qbY9-fzpDH_RhRSdtbSbGv1I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1159483894-2000-548dffaf4e17414f8a89662e6648461e.jpg",
     hasVariablePricing: false,
   },
@@ -53,7 +53,7 @@ export const services: Service[] = [
     duration: 120,
     price: 120,
     description: "Luxury coloring services using premium salon products.",
-    icon: "🎨",
+    icon: "Palette",
     imageUrl: "https://www.shutterstock.com/image-photo/hairdresser-adjusts-clients-hair-salon-600nw-2494190267.jpg",
     hasVariablePricing: true,
     variants: [
@@ -79,7 +79,7 @@ export const services: Service[] = [
     price: 85,
     description:
       "Rejuvenating spa treatment to nourish and revitalize your hair.",
-    icon: "🧖‍♀️",
+    icon: "Sparkles",
     imageUrl: "https://www.bodycraft.co.in/hubfs/Imported_Blog_Media/woman-washing-head-hairsalon-scaled-1.jpg",
     hasVariablePricing: false,
   },
@@ -159,7 +159,7 @@ export const stylists: Stylist[] = [
     name: "Jessica Park",
     specialty: ["Nail Art", "Gel Nails"],
     bio: "Creative nail artist crafting elegant and modern nail designs.",
-    photoUrl: "https://source.unsplash.com/400x600/?nail,artist,woman",
+    photoUrl: "https://s3-media0.fl.yelpcdn.com/bphoto/XCXGzdq6Sg7BdHATXoVYFw/1000s.jpg",
     experience: 4,
     rating: 4.7,
     reviewCount: 98,
