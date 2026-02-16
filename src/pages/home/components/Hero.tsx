@@ -5,8 +5,16 @@ import { Sparkles, Crown, Heart } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative bg-[#fdfdfd] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
+    <section
+      className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('https://laperle.in/wp-content/uploads/2025/01/about.jpg')",
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r z-0 bg-[#e8c1c5]/50 via-[#d4af37]/20 to-[#2c2c2c]/60"></div>
+
+      <div className="max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#2c2c2c] mb-8 leading-[1.1] tracking-tight">
@@ -16,7 +24,7 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-[#666666] mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[#1f1e1e] mb-10 max-w-2xl mx-auto">
             Indulge in premium beauty services tailored just for you. Where
             expertise meets luxury in every appointment.
           </p>
