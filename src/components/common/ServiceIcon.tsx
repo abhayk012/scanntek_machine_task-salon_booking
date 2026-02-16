@@ -1,5 +1,5 @@
 import React from "react";
-import { Scissors, Wind, Palette, Sparkles, HelpCircle } from "lucide-react";
+import { Scissors, Wind, Palette, HelpCircle, EyeClosed } from "lucide-react";
 
 interface ServiceIconProps {
   name: string;
@@ -15,7 +15,7 @@ const ServiceIcon: React.FC<ServiceIconProps> = ({ name, className }) => {
     case "Palette":
       return <Palette className={className} />;
     case "Sparkles":
-      return <Sparkles className={className} />;
+      return <EyeClosed  className={className} />;
     default:
       return <HelpCircle className={className} />;
   }
