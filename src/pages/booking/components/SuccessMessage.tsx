@@ -21,105 +21,139 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
   const selectedServices = booking.serviceIds
     .map((id) => getServiceById(id))
     .filter(Boolean);
+
   const stylist = getStylistById(booking.stylistId);
-  const totalDuration = selectedServices.reduce((acc, s) => {
-    const variantId = booking.variantIds?.[s!.id];
-    const variant = variantId ? getServiceVariant(s!.id, variantId) : null;
-    return acc + (variant ? variant.duration : s?.duration || 0);
-  }, 0);
+
+  // Calculate total duration & build service list with details
+  let totalDuration = 0;
+  const serviceItems = selectedServices.map((service) => {
+    const variantId = booking.variantIds?.[service!.id];
+    const variant = variantId
+      ? getServiceVariant(service!.id, variantId)
+      : null;
+
+    const duration = variant ? variant.duration : service?.duration || 0;
+    const price = variant ? variant.price : service?.price || 0; // assuming service/variant has price
+
+    totalDuration += duration;
+
+    return {
+      id: service!.id,
+      name: service!.name,
+      variantName: variant?.name || null,
+      duration,
+      price,
+    };
+  });
+
+  // Optional: estimate end time (assuming timeSlot is like "10:30 AM")
+  const startTime = new Date(`${booking.date} ${booking.timeSlot}`);
+  const endTime = new Date(startTime.getTime() + totalDuration * 60 * 1000);
+  const estimatedEnd = endTime.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <Card className="text-center soft-shadow-lg">
-        <CardContent className="py-12">
+    <div className="max-w-2xl mx-auto px-4 sm:px-0">
+      <Card className="text-center soft-shadow-lg border-[#F8C8DC]/30">
+        <CardContent className="py-10 sm:py-12">
           {/* Success Icon */}
           <div className="mb-6">
-            <div className="w-20 h-20 mx-auto bg-blush-light rounded-full flex items-center justify-center border-2 border-[#F8C8DC]">
-              <span className="text-5xl text-[#C9A227]">✓</span>
+            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#FDE6EF] to-[#FFF8F2] rounded-full flex items-center justify-center border-4 border-[#F8C8DC]/60 shadow-md">
+              <span className="text-6xl text-[#C9A227]">✓</span>
             </div>
           </div>
 
           {/* Success Message */}
-          <h2 className="text-3xl font-bold text-[#333333] mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#333333] mb-3">
             Booking Confirmed! 🎉
           </h2>
           <p className="text-lg text-[#666666] mb-8">
-            Your appointment has been successfully scheduled,{" "}
-            {booking.customerFirstName}
+            Thank you, <strong>{booking.customerFirstName}</strong>! Your salon
+            appointment is all set.
           </p>
 
           {/* Booking Details */}
-          <div className="bg-[#FFF8F2] rounded-xl p-6 mb-8 text-left">
-            <h3 className="text-xl font-semibold text-[#333333] mb-4">
-              Appointment Details
+          <div className="bg-[#FFF8F2] rounded-xl p-5 sm:p-6 mb-8 text-left border border-[#F8C8DC]/40">
+            <h3 className="text-xl font-semibold text-[#333333] mb-5 flex items-center gap-2">
+              <span className="text-[#C9A227] text-2xl">📅</span> Appointment
+              Details
             </h3>
 
-            <div className="space-y-3">
-              <div className="space-y-4">
-                <span className="text-[#666666] block mb-2">Services:</span>
-                <div className="space-y-3 pl-4 border-l-2 border-zinc-100">
-                  {selectedServices.map((service) => {
-                    const variantId = booking.variantIds?.[service!.id];
-                    const variant = variantId
-                      ? getServiceVariant(service!.id, variantId)
-                      : null;
-                    return (
-                      <div
-                        key={service!.id}
-                        className="flex justify-between items-start"
-                      >
-                        <span className="font-semibold text-[#333333]">
-                          {service?.name}
-                          {variant && (
-                            <span className="block text-xs text-[#F8C8DC] mt-0.5 font-medium italic">
-                              ({variant.name})
-                            </span>
-                          )}
-                        </span>
+            <div className="space-y-5">
+              {/* Services */}
+              <div>
+                <span className="text-[#666666] font-medium block mb-2">
+                  Services
+                </span>
+                <div className="space-y-4 pl-3 border-l-4 border-[#F8C8DC]/60">
+                  {serviceItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1"
+                    >
+                      <div>
+                        <p className="font-semibold text-[#333333]">
+                          {item.name}
+                        </p>
+                        {item.variantName && (
+                          <p className="text-xs text-[#F8C8DC] mt-0.5 italic">
+                            ({item.variantName})
+                          </p>
+                        )}
                       </div>
-                    );
-                  })}
+                      <div className="text-right text-sm">
+                        <p className="font-medium text-[#C9A227]">
+                          {formatPrice(item.price)}
+                        </p>
+                        <p className="text-[#888]">{item.duration} min</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <div className="flex justify-between items-start">
-                <span className="text-[#666666]">Stylist:</span>
-                <span className="font-semibold text-[#333333] text-right">
-                  {stylist?.name}
-                </span>
+              {/* Other details */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div className="flex justify-between sm:block">
+                  <span className="text-[#666666]">Stylist:</span>
+                  <span className="font-semibold text-[#333333]">
+                    {stylist?.name}
+                  </span>
+                </div>
+                <div className="flex justify-between sm:block">
+                  <span className="text-[#666666]">Date:</span>
+                  <span className="font-semibold text-[#333333]">
+                    {new Date(booking.date + "T00:00:00").toLocaleDateString(
+                      "en-US",
+                      {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      },
+                    )}
+                  </span>
+                </div>
+                <div className="flex justify-between sm:block">
+                  <span className="text-[#666666]">Time:</span>
+                  <span className="font-semibold text-[#333333]">
+                    {booking.timeSlot} – {estimatedEnd}
+                  </span>
+                </div>
+                <div className="flex justify-between sm:block">
+                  <span className="text-[#666666]">Total Duration:</span>
+                  <span className="font-semibold text-[#333333]">
+                    {totalDuration} minutes
+                  </span>
+                </div>
               </div>
 
-              <div className="flex justify-between items-start">
-                <span className="text-[#666666]">Date:</span>
-                <span className="font-semibold text-[#333333] text-right">
-                  {new Date(booking.date + "T00:00:00").toLocaleDateString(
-                    "en-US",
-                    {
-                      weekday: "long",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    },
-                  )}
-                </span>
-              </div>
-
-              <div className="flex justify-between items-start">
-                <span className="text-[#666666]">Time:</span>
-                <span className="font-semibold text-[#333333] text-right">
-                  {booking.timeSlot}
-                </span>
-              </div>
-
-              <div className="flex justify-between items-start">
-                <span className="text-[#666666]">Total Duration:</span>
-                <span className="font-semibold text-[#333333] text-right">
-                  {totalDuration} minutes
-                </span>
-              </div>
-
-              <div className="pt-3 border-t border-[#E5E5E5] flex justify-between items-start">
-                <span className="text-[#666666]">Total Price:</span>
+              {/* Total Price */}
+              <div className="pt-4 border-t border-[#E5E5E5] flex justify-between items-center text-lg">
+                <span className="text-[#666666] font-medium">Total Amount</span>
                 <span className="text-2xl font-bold text-[#C9A227]">
                   {formatPrice(booking.totalPrice)}
                 </span>
@@ -127,13 +161,17 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div className="bg-[#FDE6EF] rounded-xl p-4 mb-6">
-            <p className="text-sm text-[#666666]">
-              A confirmation has been sent to{" "}
-              <span className="font-semibold text-[#333333]">
-                {booking.customerEmail}
-              </span>
+          {/* Contact & Confirmation */}
+          <div className="bg-[#FDE6EF] rounded-xl p-5 mb-8 text-center border border-[#F8C8DC]/30">
+            <p className="text-sm text-[#666666] mb-1">
+              A confirmation has been sent to
+            </p>
+            <p className="font-semibold text-[#333333]">
+              {booking.customerEmail}
+            </p>
+            <p className="text-xs text-[#888] mt-2">
+              (Check spam if not received • Reminders will be sent 24h & 1h
+              before)
             </p>
           </div>
 
@@ -141,7 +179,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
           <Button
             variant="primary"
             size="lg"
-            className="w-full"
+            className="w-full bg-[#C9A227] hover:bg-[#b38c1f] text-white"
             onClick={onBookAnother}
           >
             Book Another Appointment
