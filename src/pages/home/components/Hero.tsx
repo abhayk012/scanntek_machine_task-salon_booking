@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
 
           {/* Features */}
           <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-12 border-t border-zinc-100 pt-16">
-            <div className="flex flex-col items-center">
+            <div className="bg-white/20 backdrop-blur-sm p-5 rounded-lg flex flex-col items-center">
               <div className="mb-6">
                 <Sparkles className="w-12 h-12 text-[#d4af37]" />
               </div>
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
                 Sustainably Sourced
               </p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="bg-white/20 backdrop-blur-sm p-5 rounded-lg flex flex-col items-center">
               <div className="mb-6">
                 <Crown className="w-12 h-12 text-[#2c2c2c]" />
               </div>
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
                 Visionary Expertise
               </p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="bg-white/20 backdrop-blur-sm p-5 rounded-lg flex flex-col items-center">
               <div className="mb-6">
                 <Heart className="w-12 h-12 text-[#e4aeae]" />
               </div>
