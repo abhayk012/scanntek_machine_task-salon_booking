@@ -26,7 +26,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   disabled = false,
 }) => {
   const form = useForm<BookingFormValues>({
-    resolver: zodResolver(bookingFormSchema as any),
+    resolver: zodResolver(bookingFormSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
