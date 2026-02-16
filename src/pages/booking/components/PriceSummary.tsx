@@ -3,6 +3,7 @@ import { formatPrice, calculatePrice } from "../../../utils/priceCalculator";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { ChevronUp, Calendar, Clock } from "lucide-react";
+import LazyImage from "../../../components/common/LazyImage";
 
 interface PriceSummaryProps {
   serviceIds: string[];
@@ -204,7 +205,7 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({
                 Stylist
               </p>
               <div className="flex items-center gap-3">
-                <img
+                <LazyImage
                   src={stylist.photoUrl}
                   alt={stylist.name}
                   className="w-8 h-8 rounded-full border border-zinc-100"

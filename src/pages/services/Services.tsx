@@ -4,6 +4,7 @@ import { services } from "../../data/mockData";
 import { Button } from "../../components/ui/button";
 import { cn } from "@/lib/utils";
 import { Filter, ChevronRight, Clock, Sparkles } from "lucide-react";
+import LazyImage from "@/components/common/LazyImage";
 
 const categories = ["All", "Hair", "Makeup", "Nails", "Skincare"];
 
@@ -87,7 +88,7 @@ const Services: React.FC = () => {
               >
                 <div className="relative h-[480px] rounded-[48px] overflow-hidden bg-zinc-100 shadow-2xl shadow-zinc-200/50 transition-all duration-700 hover:-translate-y-3">
                   {/* Image with Parallax-like effect */}
-                  <img
+                  <LazyImage
                     src={service.imageUrl}
                     alt={service.name}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"

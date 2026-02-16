@@ -2,6 +2,7 @@ import React from "react";
 import { services } from "../../../data/mockData";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
+import LazyImage from "../../../components/common/LazyImage";
 
 interface ServiceSelectorProps {
   selectedServiceIds: string[];
@@ -75,7 +76,7 @@ const ServiceSelector: React.FC<ServiceSelectorProps> = ({
                 )}
               </div>
               <div className="w-24 h-20 md:w-32 md:h-24 rounded-lg overflow-hidden shrink-0 border border-zinc-100 shadow-sm transition-transform group-hover:scale-[1.02]">
-                <img
+                <LazyImage
                   src={getServiceImage(service.id)}
                   alt={service.name}
                   className="w-full h-full object-cover"

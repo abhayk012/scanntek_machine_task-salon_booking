@@ -9,6 +9,7 @@ import {
   CardDescription,
 } from "../../../components/ui/Card";
 import { stylists } from "../../../data/mockData";
+import LazyImage from "../../../components/common/LazyImage";
 
 const StylistsPreview: React.FC = () => {
   // Show only top 3 stylists
@@ -31,7 +32,7 @@ const StylistsPreview: React.FC = () => {
             >
               <CardHeader className="pt-10">
                 <div className="relative inline-block mx-auto mb-6">
-                  <img
+                  <LazyImage
                     src={stylist.photoUrl}
                     alt={stylist.name}
                     className="w-40 h-40 rounded-full border-4 border-white shadow-xl object-cover"

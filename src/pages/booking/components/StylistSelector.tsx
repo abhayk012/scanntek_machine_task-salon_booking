@@ -9,6 +9,7 @@ import {
 } from "../../../components/ui/Card";
 import { cn } from "@/lib/utils";
 import { formatPrice } from "../../../utils/priceCalculator";
+import LazyImage from "../../../components/common/LazyImage";
 
 interface StylistSelectorProps {
   serviceId: string | null;
@@ -61,7 +62,7 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
               )}
             >
               <CardHeader className="text-center">
-                <img
+                <LazyImage
                   src={stylist.photoUrl}
                   alt={stylist.name}
                   className="w-24 h-24 mx-auto rounded-full mb-3 border-2 border-[#F8C8DC]"

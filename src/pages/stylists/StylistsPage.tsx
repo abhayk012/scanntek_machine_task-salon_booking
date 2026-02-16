@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
 import StaffReviews from "./components/StaffReviews";
+import LazyImage from "@/components/common/LazyImage";
 
 const specialties = [
   "All",
@@ -108,7 +109,7 @@ const StylistsPage: React.FC = () => {
                 <Card className="border-none shadow-2xl shadow-zinc-100 overflow-hidden rounded-[40px] transition-transform duration-500 hover:-translate-y-2">
                   <div className="flex flex-col md:flex-row h-full">
                     <div className="relative w-full md:w-[45%] h-[400px] md:h-auto overflow-hidden">
-                      <img
+                      <LazyImage
                         src={stylist.photoUrl}
                         alt={stylist.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

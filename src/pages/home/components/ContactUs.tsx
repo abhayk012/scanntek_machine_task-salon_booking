@@ -2,6 +2,7 @@ import React from "react";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/Card";
+import LazyImage from "../../../components/common/LazyImage";
 
 const ContactUs: React.FC = () => {
   return (
@@ -53,7 +54,7 @@ const ContactUs: React.FC = () => {
 
             {/* Visual Element / Map Placeholder */}
             <div className="relative h-[300px] rounded-3xl overflow-hidden shadow-2xl group">
-              <img
+              <LazyImage
                 src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=800&h=400&auto=format&fit=crop"
                 alt="Salon Interior"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
