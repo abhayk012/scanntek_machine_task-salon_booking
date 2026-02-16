@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from "react";
-import { Link } from "react-router";
+import React, { useState, useMemo, useEffect } from "react";
+import { Link, useSearchParams } from "react-router";
 import { Star, Filter, Heart, MessageSquare } from "lucide-react";
 import { stylists } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
@@ -19,8 +19,24 @@ const specialties = [
 ];
 
 const StylistsPage: React.FC = () => {
-  const [selectedSpecialty, setSelectedSpecialty] = useState("All");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filterParam = searchParams.get("filter") || "All";
+  const [selectedSpecialty, setSelectedSpecialty] = useState(filterParam);
   const [expandedStylist, setExpandedStylist] = useState<string | null>(null);
+
+  useEffect(() => {
+    setSelectedSpecialty(filterParam);
+  }, [filterParam]);
+
+  const handleFilterChange = (specialty: string) => {
+    setSelectedSpecialty(specialty);
+    if (specialty === "All") {
+      searchParams.delete("filter");
+    } else {
+      searchParams.set("filter", specialty);
+    }
+    setSearchParams(searchParams);
+  };
 
   const filteredStylists = useMemo(() => {
     if (selectedSpecialty === "All") return stylists;
@@ -68,7 +84,7 @@ const StylistsPage: React.FC = () => {
             {specialties.map((specialty) => (
               <button
                 key={specialty}
-                onClick={() => setSelectedSpecialty(specialty)}
+                onClick={() => handleFilterChange(specialty)}
                 className={cn(
                   "px-6 py-2 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap border",
                   selectedSpecialty === specialty

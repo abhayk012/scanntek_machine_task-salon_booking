@@ -26,7 +26,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   disabled = false,
 }) => {
   const form = useForm<BookingFormValues>({
-    resolver: zodResolver(bookingFormSchema),
+    resolver: zodResolver(bookingFormSchema as any),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -146,8 +146,6 @@ const BookingForm: React.FC<BookingFormProps> = ({
               <FormMessage />
             </div>
           </div>
-
-          
 
           <Button
             type="submit"
