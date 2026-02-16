@@ -62,7 +62,7 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
             >
               <CardHeader className="text-center">
                 <img
-                  src={stylist.photo}
+                  src={stylist.photoUrl}
                   alt={stylist.name}
                   className="w-24 h-24 mx-auto rounded-full mb-3 border-2 border-[#F8C8DC]"
                 />

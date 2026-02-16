@@ -96,21 +96,31 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({
                 <p className="text-sm text-zinc-500 font-medium">
                   {timeSlot} -{" "}
                   {(() => {
-                    const [h, m_a] = timeSlot.split(":");
-                    const mStr = m_a.split(" ")[0];
-                    const isPM = m_a.includes("PM");
-                    let hours = parseInt(h);
-                    if (isPM && hours !== 12) hours += 12;
-                    if (!isPM && hours === 12) hours = 0;
+                    try {
+                      const [timePart, ampmPart] = timeSlot.split(" ");
+                      const [hStr, mStr] = timePart.split(":");
+                      const isPM = ampmPart === "PM";
+                      let hours = parseInt(hStr);
+                      if (isPM && hours !== 12) hours += 12;
+                      if (!isPM && hours === 12) hours = 0;
 
-                    const endDate = new Date(2000, 0, 1, hours, parseInt(mStr));
-                    endDate.setMinutes(endDate.getMinutes() + totalDuration);
+                      const endDate = new Date(
+                        2000,
+                        0,
+                        1,
+                        hours,
+                        parseInt(mStr),
+                      );
+                      endDate.setMinutes(endDate.getMinutes() + totalDuration);
 
-                    const endHours = endDate.getHours();
-                    const endMinutes = endDate.getMinutes();
-                    const endAmPm = endHours >= 12 ? "PM" : "AM";
-                    const displayEndHours = endHours % 12 || 12;
-                    return `${displayEndHours}:${endMinutes.toString().padStart(2, "0")} ${endAmPm}`;
+                      const endHours = endDate.getHours();
+                      const endMinutes = endDate.getMinutes();
+                      const endAmPm = endHours >= 12 ? "PM" : "AM";
+                      const displayEndHours = endHours % 12 || 12;
+                      return `${displayEndHours}:${endMinutes.toString().padStart(2, "0")} ${endAmPm}`;
+                    } catch (e) {
+                      return "N/A";
+                    }
                   })()}{" "}
                   (est.)
                 </p>
@@ -195,7 +205,7 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({
               </p>
               <div className="flex items-center gap-3">
                 <img
-                  src={stylist.photo}
+                  src={stylist.photoUrl}
                   alt={stylist.name}
                   className="w-8 h-8 rounded-full border border-zinc-100"
                 />

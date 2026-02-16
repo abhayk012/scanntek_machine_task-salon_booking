@@ -48,13 +48,30 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
   });
 
   // Optional: estimate end time (assuming timeSlot is like "10:30 AM")
-  const startTime = new Date(`${booking.date} ${booking.timeSlot}`);
-  const endTime = new Date(startTime.getTime() + totalDuration * 60 * 1000);
-  const estimatedEnd = endTime.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
+  let estimatedEnd = "N/A";
+  try {
+    // Robust parsing for common time formats like "10:30 AM" or "10:30"
+    const [timePart, ampmPart] = booking.timeSlot.split(" ");
+    const [hoursStr, minutesStr] = timePart.split(":");
+    let hours = parseInt(hoursStr);
+    const minutes = parseInt(minutesStr);
+
+    if (ampmPart === "PM" && hours !== 12) hours += 12;
+    if (ampmPart === "AM" && hours === 12) hours = 0;
+
+    // Use a fixed reference date to avoid issues with date strings
+    const startTime = new Date(2000, 0, 1, hours, minutes);
+    if (!isNaN(startTime.getTime())) {
+      const endTime = new Date(startTime.getTime() + totalDuration * 60 * 1000);
+      estimatedEnd = endTime.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      });
+    }
+  } catch (e) {
+    console.error("Error calculating estimated end time:", e);
+  }
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-0">
