@@ -1,5 +1,14 @@
 import type { Service, Stylist, Review } from "@/types";
 
+export type Notification = {
+  id: string;
+  type: "upcoming" | "promotion" | "reminder";
+  title: string;
+  message: string;
+  time: string;
+  read: boolean;
+};
+
 /* ============================
    SERVICES
 ============================ */
@@ -290,3 +299,43 @@ export const MOCK_REVIEWS: Review[] = [
 
 export const getReviewsByStylist = (stylistId: string) =>
   MOCK_REVIEWS.filter((r) => r.stylistId === stylistId);
+
+export const MOCK_BOOKINGS = [
+  {
+    id: "b1",
+    status: "upcoming",
+    price: "$90.00",
+    serviceName: "Signature Cut",
+    date: "2024-03-15",
+    time: "10:30 AM",
+    specialist: "Alexandra Chen",
+  },
+  {
+    id: "b2",
+    status: "completed",
+    price: "$65.00",
+    serviceName: "Gel Manicure",
+    date: "2024-02-10",
+    time: "02:00 PM",
+    specialist: "Jessica Park",
+  },
+];
+
+export const MOCK_NOTIFICATIONS: Notification[] = [
+  {
+    id: "1",
+    type: "upcoming",
+    title: "Appointment Reminder",
+    message: "Your hair styling appointment is tomorrow at 10:00 AM",
+    time: "2 hours ago",
+    read: false,
+  },
+  {
+    id: "2",
+    type: "promotion",
+    title: "Summer Special",
+    message: "Get 20% off on all hair spa services this month!",
+    time: "5 hours ago",
+    read: true,
+  },
+];
