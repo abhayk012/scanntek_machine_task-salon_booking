@@ -23,7 +23,7 @@ export const services: Service[] = [
     description:
       "Precision haircut and styling tailored to enhance your natural beauty.",
     icon: "✂️",
-    imageUrl: "https://source.unsplash.com/800x600/?haircut,salon,woman",
+    imageUrl: "https://5.imimg.com/data5/GLADMIN/Default/2022/6/SD/BO/IV/85062/women-hair-cut-services-250x250.jpg",
     hasVariablePricing: true,
     variants: [
       { id: "regular", name: "Regular Cut", duration: 45, priceModifier: 0 },
@@ -43,7 +43,7 @@ export const services: Service[] = [
     price: 60,
     description: "Professional styling for events, parties, or everyday glam.",
     icon: "💇‍♀️",
-    imageUrl: "https://source.unsplash.com/800x600/?hair,styling,beauty",
+    imageUrl: "https://www.southernliving.com/thmb/af4qbY9-fzpDH_RhRSdtbSbGv1I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1159483894-2000-548dffaf4e17414f8a89662e6648461e.jpg",
     hasVariablePricing: false,
   },
   {
@@ -54,7 +54,7 @@ export const services: Service[] = [
     price: 120,
     description: "Luxury coloring services using premium salon products.",
     icon: "🎨",
-    imageUrl: "https://source.unsplash.com/800x600/?hair,coloring,salon",
+    imageUrl: "https://www.shutterstock.com/image-photo/hairdresser-adjusts-clients-hair-salon-600nw-2494190267.jpg",
     hasVariablePricing: true,
     variants: [
       {
@@ -80,7 +80,7 @@ export const services: Service[] = [
     description:
       "Rejuvenating spa treatment to nourish and revitalize your hair.",
     icon: "🧖‍♀️",
-    imageUrl: "https://source.unsplash.com/800x600/?hair,spa,relax",
+    imageUrl: "https://www.bodycraft.co.in/hubfs/Imported_Blog_Media/woman-washing-head-hairsalon-scaled-1.jpg",
     hasVariablePricing: false,
   },
   {
@@ -91,7 +91,7 @@ export const services: Service[] = [
     price: 150,
     description: "Elegant and long-lasting bridal makeup for your special day.",
     icon: "💄",
-    imageUrl: "https://source.unsplash.com/800x600/?bridal,makeup,artist",
+    imageUrl: "https://i-media.vyaparify.com/vcards/blogs/67583/a-complete-makeup-routine-guide-for-all-skin-types_6347d9af652ca-(1).jpg",
     hasVariablePricing: false,
   },
   {
@@ -102,7 +102,7 @@ export const services: Service[] = [
     price: 55,
     description: "Durable gel manicure with beautiful custom nail designs.",
     icon: "💅",
-    imageUrl: "https://source.unsplash.com/800x600/?gel,manicure,nails",
+    imageUrl: "https://s3-ap-southeast-1.amazonaws.com/urbanclap-prod/images/growth/luminosity/1671710489097-0082a8.jpeg",
     hasVariablePricing: false,
   },
 ];
@@ -117,7 +117,7 @@ export const stylists: Stylist[] = [
     name: "Alexandra Chen",
     specialty: ["Hair Styling", "Coloring", "Extensions"],
     bio: "Senior stylist with 8 years of experience in stunning hair transformations.",
-    photoUrl: "https://source.unsplash.com/400x600/?female,hair,stylist",
+    photoUrl: "https://lirp.cdn-website.com/44100b32/dms3rep/multi/opt/IMG_20250109_162308-f55a4a1a-65ac5c22-640w.jpg",
     experience: 8,
     rating: 4.9,
     reviewCount: 156,
@@ -139,7 +139,7 @@ export const stylists: Stylist[] = [
     name: "Maria Rodriguez",
     specialty: ["Bridal", "Makeup", "Special Events"],
     bio: "Professional bridal makeup artist with luxury event experience.",
-    photoUrl: "https://source.unsplash.com/400x600/?makeup,artist,woman",
+    photoUrl: "https://www.cbsalonandspa.com/wp-content/uploads/2020/06/jen-prince.jpg",
     experience: 6,
     rating: 4.8,
     reviewCount: 124,
@@ -178,7 +178,7 @@ export const stylists: Stylist[] = [
     name: "Sophia Lee",
     specialty: ["Spa Treatments", "Hair Therapy"],
     bio: "Certified esthetician providing deeply relaxing spa treatments.",
-    photoUrl: "https://source.unsplash.com/400x600/?spa,therapist,woman",
+    photoUrl: "https://www.cbsalonandspa.com/wp-content/uploads/2025/02/nicole-andrade-owner-of-casabella-salon.jpg",
     experience: 7,
     rating: 4.9,
     reviewCount: 142,
@@ -197,7 +197,7 @@ export const stylists: Stylist[] = [
     name: "Emma Thompson",
     specialty: ["Hair Cutting", "Modern Styles"],
     bio: "Precision cutter known for flawless, modern haircuts.",
-    photoUrl: "https://source.unsplash.com/400x600/?hairdresser,woman",
+    photoUrl: "https://www.cbsalonandspa.com/wp-content/uploads/2020/06/ashley_Coburn_raisanen.jpg",
     experience: 5,
     rating: 4.8,
     reviewCount: 167,
