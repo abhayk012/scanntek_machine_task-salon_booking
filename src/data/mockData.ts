@@ -1,13 +1,17 @@
-import type { Service, Stylist } from "@/types";
+import type { Service, Stylist, Review } from "@/types";
 
 export const services: Service[] = [
   {
     id: "hair-cut",
     name: "Hair Cut",
+    category: "Hair",
     duration: 45,
+    price: 45,
     description:
       "Premium hair cutting and styling service tailored to your needs.",
     icon: "✂️",
+    imageUrl:
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
     hasVariablePricing: true,
     variants: [
       { id: "regular", name: "Regular Cut", duration: 45, priceModifier: 0 },
@@ -22,17 +26,25 @@ export const services: Service[] = [
   {
     id: "hair-styling",
     name: "Hair Styling",
+    category: "Hair",
     duration: 30,
+    price: 60,
     description: "Professional hair styling for any occasion.",
     icon: "💇‍♀️",
+    imageUrl:
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80",
     hasVariablePricing: false,
   },
   {
     id: "hair-coloring",
     name: "Hair Coloring",
+    category: "Hair",
     duration: 120,
+    price: 120,
     description: "Expert hair coloring services using high-quality products.",
     icon: "🎨",
+    imageUrl:
+      "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80",
     hasVariablePricing: true,
     variants: [
       {
@@ -52,10 +64,39 @@ export const services: Service[] = [
   {
     id: "hair-spa",
     name: "Hair Spa",
+    category: "Skincare",
     duration: 60,
+    price: 85,
     description:
       "Relaxing hair spa treatments to nourish and revitalize your hair.",
     icon: "🧖‍♀️",
+    imageUrl:
+      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80",
+    hasVariablePricing: false,
+  },
+  {
+    id: "makeup-bridal",
+    name: "Bridal Makeup",
+    category: "Makeup",
+    duration: 90,
+    price: 150,
+    description: "Elegant and long-lasting bridal makeup for your special day.",
+    icon: "💄",
+    imageUrl:
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80",
+    hasVariablePricing: false,
+  },
+  {
+    id: "nails-gel",
+    name: "Gel Manicure",
+    category: "Nails",
+    duration: 60,
+    price: 55,
+    description:
+      "Durable and stylish gel nail treatment with custom art options.",
+    icon: "💅",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604654894611-6973b376cbde?w=800&q=80",
     hasVariablePricing: false,
   },
 ];
@@ -63,29 +104,120 @@ export const services: Service[] = [
 export const stylists: Stylist[] = [
   {
     id: "stylist-1",
-    name: "Alex Rivers",
+    name: "Alexandra Chen",
+    specialty: ["Hair Styling", "Coloring", "Extensions"],
+    bio: "Expert stylist with 8 years of experience in creating stunning hair transformations.",
+    photoUrl:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
     experience: 8,
     rating: 4.9,
-    photo:
-      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&h=200&auto=format&fit=crop",
-    services: ["hair-cut", "hair-styling"],
+    reviewCount: 156,
+    services: ["hair-styling", "hair-coloring"],
     prices: {
-      "hair-cut": 85,
-      "hair-styling": 60,
+      "hair-styling": 65,
+      "hair-coloring": 120,
     },
+    availability: [
+      { dayOfWeek: 1, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 2, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 3, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 4, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 5, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 6, startTime: "09:00", endTime: "19:00" },
+    ],
   },
   {
     id: "stylist-2",
-    name: "Sarah Chen",
+    name: "Maria Rodriguez",
+    specialty: ["Makeup", "Bridal", "Special Events"],
+    bio: "Professional makeup artist specializing in bridal and event makeup.",
+    photoUrl:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    experience: 6,
+    rating: 4.8,
+    reviewCount: 124,
+    services: ["hair-styling"], // Mapping to existing service for booking demo
+    prices: {
+      "hair-styling": 80,
+    },
+    availability: [
+      { dayOfWeek: 1, startTime: "11:00", endTime: "19:00" },
+      { dayOfWeek: 2, startTime: "11:00", endTime: "19:00" },
+      { dayOfWeek: 3, startTime: "11:00", endTime: "19:00" },
+      { dayOfWeek: 4, startTime: "11:00", endTime: "20:00" },
+      { dayOfWeek: 5, startTime: "11:00", endTime: "20:00" },
+      { dayOfWeek: 6, startTime: "09:00", endTime: "18:00" },
+    ],
+  },
+  {
+    id: "stylist-3",
+    name: "Jessica Park",
+    specialty: ["Nail Art", "Gel Nails", "Nail Design"],
+    bio: "Creative nail artist creating beautiful and intricate nail designs.",
+    photoUrl:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    experience: 4,
+    rating: 4.7,
+    reviewCount: 98,
+    services: ["hair-spa"], // Mapping for demo
+    prices: {
+      "hair-spa": 45,
+    },
+    availability: [
+      { dayOfWeek: 1, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 2, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 3, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 4, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 5, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 6, startTime: "09:00", endTime: "19:00" },
+      { dayOfWeek: 0, startTime: "11:00", endTime: "17:00" },
+    ],
+  },
+  {
+    id: "stylist-4",
+    name: "Sophia Lee",
+    specialty: ["Skincare", "Facials", "Spa Treatments"],
+    bio: "Certified esthetician providing rejuvenating skincare and spa treatments.",
+    photoUrl:
+      "https://images.unsplash.com/photo-1517070213202-1e1028e4e84e?w=400&h=400&fit=crop",
+    experience: 7,
+    rating: 4.9,
+    reviewCount: 142,
+    services: ["hair-spa"],
+    prices: {
+      "hair-spa": 110,
+    },
+    availability: [
+      { dayOfWeek: 1, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 2, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 3, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 4, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 5, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 6, startTime: "09:00", endTime: "19:00" },
+    ],
+  },
+  {
+    id: "stylist-5",
+    name: "Emma Thompson",
+    specialty: ["Hair Cutting", "Keratin Treatments", "Blow Dry"],
+    bio: "Precision hair cutter with expertise in modern cuts and treatments.",
+    photoUrl:
+      "https://images.unsplash.com/photo-1516891684159-5ac92a2edef6?w=400&h=400&fit=crop",
     experience: 5,
     rating: 4.8,
-    photo:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop",
-    services: ["hair-cut", "hair-spa"],
+    reviewCount: 167,
+    services: ["hair-cut"],
     prices: {
-      "hair-cut": 75,
-      "hair-spa": 120,
+      "hair-cut": 95,
     },
+    availability: [
+      { dayOfWeek: 1, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 2, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 3, startTime: "10:00", endTime: "18:00" },
+      { dayOfWeek: 4, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 5, startTime: "10:00", endTime: "20:00" },
+      { dayOfWeek: 6, startTime: "09:00", endTime: "19:00" },
+    ],
   },
 ];
 
@@ -207,3 +339,44 @@ export const formatTimeToAMPM = (time: string) => {
   const formattedHours = hours % 12 || 12;
   return `${formattedHours}:${minutes.toString().padStart(2, "0")} ${ampm}`;
 };
+
+export const MOCK_REVIEWS: Review[] = [
+  {
+    id: "r1",
+    stylistId: "stylist-1",
+    customerName: "Sophia Miller",
+    rating: 5,
+    comment:
+      "Alexandra is an absolute wizard with color! My hair has never looked this vibrant and healthy.",
+    date: "2024-02-10",
+  },
+  {
+    id: "r2",
+    stylistId: "stylist-1",
+    customerName: "Isabella Garcia",
+    rating: 5,
+    comment:
+      "Best extensions I've ever had. They feel so natural and the blend is perfect.",
+    date: "2024-02-05",
+  },
+  {
+    id: "r3",
+    stylistId: "stylist-2",
+    customerName: "Emily Wilson",
+    rating: 5,
+    comment:
+      "Maria did my bridal makeup and I felt like a queen. It lasted all night even with the dancing!",
+    date: "2024-01-28",
+  },
+  {
+    id: "r4",
+    stylistId: "stylist-5",
+    customerName: "Olivia Brown",
+    rating: 4,
+    comment: "Great haircut, exactly what I asked for. Emma is very precise.",
+    date: "2024-02-12",
+  },
+];
+
+export const getReviewsByStylist = (stylistId: string) =>
+  MOCK_REVIEWS.filter((r) => r.stylistId === stylistId);

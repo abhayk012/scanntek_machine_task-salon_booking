@@ -5,6 +5,7 @@ import Services from "./pages/services/Services";
 import Booking from "./pages/booking/Booking";
 import ServiceOptions from "./pages/booking/ServiceOptions";
 import History from "./pages/booking/History";
+import StylistsPage from "./pages/stylists/StylistsPage";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -60,6 +61,7 @@ const LayoutWrapper = () => {
 const routesConfig = [
   { path: "/", element: <Home />, title: "Home" },
   { path: "/services", element: <Services />, title: "Services" },
+  { path: "/stylists", element: <StylistsPage />, title: "Our Specialists" },
   { path: "/booking", element: <Booking />, title: "Book Appointment" },
   {
     path: "/booking/service/:serviceId",

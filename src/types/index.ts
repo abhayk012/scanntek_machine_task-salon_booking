@@ -11,24 +11,44 @@ export interface ServiceVariant {
 export interface Service {
   id: string;
   name: string;
+  category: string; // e.g., "Hair", "Makeup", "Nails"
   duration: number; // Base duration (for display)
+  price: number; // Starting price
   description: string;
   icon: string; // emoji or icon name
+  imageUrl: string; // Background image for the card
   variants?: ServiceVariant[]; // Optional - if undefined, use base service
   hasVariablePricing?: boolean; // If true, show "Price varies"
 }
 
-// Stylist interface with service-specific pricing
+// Stylist interface with service-specific pricing and profile details
 export interface Stylist {
   id: string;
   name: string;
-  experience: number; // years of experience
-  rating: number; // out of 5
-  photo: string; // URL or placeholder
-  services: string[]; // array of service IDs this stylist offers
+  specialty: string[]; // Integrated for filtering
+  bio: string;
+  photoUrl: string; // Renamed from photo to match user preference
+  experience: number;
+  rating: number;
+  reviewCount: number;
+  services: string[];
   prices: {
-    [serviceId: string]: number; // price for each service
+    [serviceId: string]: number;
   };
+  availability: Array<{
+    dayOfWeek: number;
+    startTime: string;
+    endTime: string;
+  }>;
+}
+
+export interface Review {
+  id: string;
+  stylistId: string;
+  customerName: string;
+  rating: number;
+  comment: string;
+  date: string;
 }
 
 // Booking interface
