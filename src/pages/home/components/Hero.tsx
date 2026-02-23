@@ -46,11 +46,11 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-black/50">
-      <div className="max-w-full h-screen mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center justify-center">
+    <section className="overflow-hidden bg-black/50 min-h-screen lg:h-screen flex items-center">
+      <div className="max-w-full w-full mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* LEFT SIDE – TEXT */}
-          <div className="relative h-[400px] flex items-center px-6 lg:px-8 py-24 lg:py-32">
+          <div className="relative order-2 lg:order-1 h-auto lg:h-[400px] flex items-center px-6 md:px-12 lg:px-24 py-12 lg:py-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={slides[current].id}
@@ -58,15 +58,16 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -80 }}
                 transition={{ duration: 0.6 }}
-                className="absolute
+                className="relative lg:absolute z-10
                 bg-white/10 
                 backdrop-blur-2xl 
                 border border-white/20 
                 shadow-2xl 
-                rounded-2xl p-8
-                rounded-[70%_30%_50%_50%/40%_60%_40%_60%]"
+                p-6 md:p-12
+                rounded-[30px] lg:rounded-[70%_30%_50%_50%/40%_60%_40%_60%]
+                w-full lg:max-w-xl"
               >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
                   {slides[current].title}
                   <br />
                   <span className="text-neutral-300">
@@ -74,24 +75,24 @@ const Hero: React.FC = () => {
                   </span>
                 </h1>
 
-                <p className="mt-6 text-lg text-neutral-300 max-w-xl">
+                <p className="mt-4 md:mt-6 text-base md:text-lg text-neutral-300">
                   {slides[current].description}
                 </p>
 
-                <div className="mt-10 flex gap-4">
-                  <Link to="/booking">
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4">
+                  <Link to="/booking" className="w-full sm:w-auto">
                     <Button
                       size="xl"
-                      className="bg-black text-white hover:bg-neutral-800"
+                      className="w-full bg-black text-white hover:bg-neutral-800"
                     >
                       Book Appointment
                     </Button>
                   </Link>
-                  <Link to="/services">
+                  <Link to="/services" className="w-full sm:w-auto">
                     <Button
                       variant="outline"
                       size="xl"
-                      className="border-black text-black hover:bg-black hover:text-white"
+                      className="w-full border-white text-white hover:bg-white hover:text-black"
                     >
                       Explore Services
                     </Button>
@@ -102,7 +103,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* RIGHT SIDE – IMAGE */}
-          <div className="relative h-screen p-0 w-full">
+          <div className="relative order-1 lg:order-2 h-[40vh] md:h-[50vh] lg:h-screen w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={slides[current].id}
@@ -127,7 +128,7 @@ const Hero: React.FC = () => {
                     ease: "easeInOut",
                   },
                 }}
-                className="absolute inset-0 overflow-hidden shadow-white shadow-md"
+                className="absolute inset-0 overflow-hidden shadow-white shadow-md lg:rounded-none"
               >
                 {/* Image */}
                 <img
@@ -137,7 +138,7 @@ const Hero: React.FC = () => {
                 />
 
                 {/* Premium Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" />
               </motion.div>
             </AnimatePresence>
           </div>

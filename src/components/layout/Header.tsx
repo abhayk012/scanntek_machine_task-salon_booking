@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="./logo.png" className="w-[80px] md:h-[80px]" />
+            <img src="./logo.png" className="w-[80px] rounded-full md:h-[80px]" />
             <span className="text-2xl font-bold text-primary-text">
               Bella Salon
             </span>

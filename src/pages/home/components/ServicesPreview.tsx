@@ -10,13 +10,13 @@ const ServicesPreview: React.FC = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-[120px] bg-[#f5f5f5]">
-      <div className="max-w-[1400px] mx-auto px-[40px]">
-        <h2 className="text-[40px] font-semibold text-center tracking-[2px] mb-[80px]">
+    <section className="py-12 lg:py-[120px] bg-[#f5f5f5]">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-[40px]">
+        <h2 className="text-3xl lg:text-[40px] font-semibold text-center tracking-[2px] mb-12 lg:mb-[80px]">
           OUR SERVICES
         </h2>
 
-        <div className="flex gap-[20px] h-[420px] w-full">
+        <div className="flex flex-col lg:flex-row gap-[20px] min-h-[420px] lg:h-[420px] w-full">
           {featuredServices.map((service, index) => {
             const isActive = index === active;
 
@@ -25,13 +25,17 @@ const ServicesPreview: React.FC = () => {
                 key={service.id}
                 layout
                 onMouseEnter={() => setActive(index)}
+                onClick={() => setActive(index)}
                 transition={{
                   layout: {
                     duration: 0.9,
                     ease: [0.25, 0.8, 0.25, 1],
                   },
                 }}
-                className="relative overflow-hidden cursor-pointer rounded-[50px] flex"
+                className={cn(
+                  "relative overflow-hidden cursor-pointer rounded-[30px] lg:rounded-[50px] flex",
+                  isActive ? "h-[300px] lg:h-full" : "h-[80px] lg:h-full",
+                )}
                 style={{
                   flex: isActive ? 3 : 1,
                 }}
@@ -55,29 +59,32 @@ const ServicesPreview: React.FC = () => {
                 {/* Overlay */}
                 <div
                   className={cn(
-                    "absolute inset-0  backdrop-blur-[1px] ",
+                    "absolute inset-0 backdrop-blur-[1px] transition-colors duration-500",
                     isActive ? "bg-black/20" : "bg-black/50",
                   )}
                 />
 
                 <motion.div
                   layout
-                  className="absolute bottom-[40px] left-[40px] right-[40px] overflow-hidden"
+                  className="absolute bottom-[20px] lg:bottom-[40px] left-[20px] lg:left-[40px] right-[20px] lg:right-[40px] overflow-hidden"
                   animate={{
                     opacity: isActive ? 1 : 0,
                   }}
                   transition={{
-                    duration: isActive ? 1 : 0
+                    duration: isActive ? 1 : 0,
                   }}
                 >
-                  <motion.div layout className="flex justify-between">
-                    <h3 className="text-white tracking-[2px] text-[28px] font-semibold mb-[12px] whitespace-nowrap">
+                  <motion.div
+                    layout
+                    className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+                  >
+                    <h3 className="text-white tracking-[2px] text-xl lg:text-[28px] font-semibold whitespace-nowrap">
                       {service.name}
                     </h3>
 
-                    <Link to="/services">
+                    <Link to="/services" className="w-full sm:w-auto">
                       <Button
-                        className="bg-[#e6c27a] text-black px-[28px] py-[12px] rounded-[8px]"
+                        className="w-full sm:w-auto bg-[#e6c27a] text-black px-[28px] py-[12px] rounded-[8px]"
                         style={{
                           background:
                             "linear-gradient(21.8deg, #E7BF88 14.29%, #FFF2CD 43.8%, #E7BF88 54.46%, #FFDD9D 62.82%, #E7BF88 85.71%)",
@@ -89,10 +96,10 @@ const ServicesPreview: React.FC = () => {
                   </motion.div>
                 </motion.div>
 
-                {/* Collapsed Vertical Text */}
+                {/* Collapsed Text */}
                 {!isActive && (
-                  <div className="absolute inset-0 flex items-center justify-start">
-                    <p className="text-white text-[18px] font-semibold tracking-[3px] rotate-[-90deg] whitespace-nowrap">
+                  <div className="absolute inset-0 flex items-center justify-center lg:justify-start">
+                    <p className="text-white text-base lg:text-[18px] font-semibold tracking-[3px] lg:rotate-[-90deg] whitespace-nowrap">
                       {service.name.toUpperCase()}
                     </p>
                   </div>
@@ -102,10 +109,10 @@ const ServicesPreview: React.FC = () => {
           })}
         </div>
 
-        <div className="text-center mt-[60px]">
+        <div className="text-center mt-12 lg:mt-[60px]">
           <Link to="/services">
             <Button
-              className=" text-black px-[40px] py-[14px] rounded-[10px] shadow-lg"
+              className="text-black px-10 py-4 rounded-[10px] shadow-lg"
               style={{
                 background:
                   "linear-gradient(21.8deg, #E7BF88 14.29%, #FFF2CD 43.8%, #E7BF88 54.46%, #FFDD9D 62.82%, #E7BF88 85.71%)",
