@@ -97,7 +97,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1] },
     },
   };
 
@@ -111,12 +111,12 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
             duration={3200}
             particleCount={180}
             width={1600}
-            colors={["#C9A227", "#F8C8DC", "#FDE6EF", "#333333", "#666666"]}
+            colors={["#111111", "#525252", "#737373", "#e5e5e5", "#ffffff"]}
           />
         </div>
       )}
 
-      <Card className="text-center soft-shadow-lg border-[#F8C8DC]/30 relative z-0">
+      <Card className="text-center soft-shadow-lg border-border-subtle/30 relative z-0">
         <CardContent className="py-10 sm:py-12">
           {/* Success Icon – also animated */}
           <motion.div
@@ -125,8 +125,8 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7, ease: "backOut" }}
           >
-            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#FDE6EF] to-[#FFF8F2] rounded-full flex items-center justify-center border-4 border-[#F8C8DC]/60 shadow-md">
-              <span className="text-6xl text-[#C9A227]">✓</span>
+            <div className="w-20 h-20 mx-auto bg-secondary rounded-full flex items-center justify-center border-4 border-border-subtle/60 shadow-md">
+              <span className="text-6xl text-primary-text">✓</span>
             </div>
           </motion.div>
 
@@ -138,14 +138,14 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
           >
             <motion.h2
               variants={childVariants}
-              className="text-3xl sm:text-4xl font-bold text-[#333333] mb-3"
+              className="text-3xl sm:text-4xl font-bold text-primary-text mb-3"
             >
               Booking Confirmed! 🎉
             </motion.h2>
 
             <motion.p
               variants={childVariants}
-              className="text-lg text-[#666666] mb-8"
+              className="text-lg text-secondary-text mb-8"
             >
               Thank you, <strong>{booking.customerFirstName}</strong>! Your
               salon appointment is all set.
@@ -153,18 +153,18 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
           </motion.div>
 
           {/* Booking Details – optional: can stagger this too if desired */}
-          <div className="bg-[#FFF8F2] rounded-xl p-5 sm:p-6 mb-8 text-left border border-[#F8C8DC]/40">
-            <h3 className="text-xl font-semibold text-[#333333] mb-5 flex items-center gap-2">
-              <span className="text-[#C9A227] text-2xl">📅</span> Appointment
+          <div className="bg-secondary/30 rounded-xl p-5 sm:p-6 mb-8 text-left border border-border-subtle/40">
+            <h3 className="text-xl font-semibold text-primary-text mb-5 flex items-center gap-2">
+              <span className="text-primary-text text-2xl">📅</span> Appointment
               Details
             </h3>
 
             <div className="space-y-5">
               <div>
-                <span className="text-[#666666] font-medium block mb-2">
+                <span className="text-secondary-text font-medium block mb-2">
                   Services
                 </span>
-                <div className="space-y-4 pl-3 border-l-4 border-[#F8C8DC]/60">
+                <div className="space-y-4 pl-3 border-l-4 border-primary/60">
                   {serviceItems.map((item) => (
                     <div
                       key={item.id}
@@ -175,16 +175,16 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
                           {item.name}
                         </p>
                         {item.variantName && (
-                          <p className="text-xs text-[#F8C8DC] mt-0.5 italic">
+                          <p className="text-xs text-secondary-text mt-0.5 italic">
                             ({item.variantName})
                           </p>
                         )}
                       </div>
                       <div className="text-right text-sm">
-                        <p className="font-medium text-[#C9A227]">
+                        <p className="font-medium text-primary-text">
                           {formatPrice(item.price)}
                         </p>
-                        <p className="text-[#888]">{item.duration} min</p>
+                        <p className="text-muted-text">{item.duration} min</p>
                       </div>
                     </div>
                   ))}
@@ -193,14 +193,14 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div className="flex justify-between sm:block">
-                  <span className="text-[#666666]">Stylist:</span>
-                  <span className="font-semibold text-[#333333]">
+                  <span className="text-secondary-text">Stylist:</span>
+                  <span className="font-semibold text-primary-text">
                     {stylist?.name}
                   </span>
                 </div>
                 <div className="flex justify-between sm:block">
-                  <span className="text-[#666666]">Date:</span>
-                  <span className="font-semibold text-[#333333]">
+                  <span className="text-secondary-text">Date:</span>
+                  <span className="font-semibold text-primary-text">
                     {new Date(booking.date + "T00:00:00").toLocaleDateString(
                       "en-US",
                       {
@@ -213,36 +213,38 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
                   </span>
                 </div>
                 <div className="flex justify-between sm:block">
-                  <span className="text-[#666666]">Time:</span>
-                  <span className="font-semibold text-[#333333]">
+                  <span className="text-secondary-text">Time:</span>
+                  <span className="font-semibold text-primary-text">
                     {booking.timeSlot} – {estimatedEnd}
                   </span>
                 </div>
                 <div className="flex justify-between sm:block">
-                  <span className="text-[#666666]">Total Duration:</span>
-                  <span className="font-semibold text-[#333333]">
+                  <span className="text-secondary-text">Total Duration:</span>
+                  <span className="font-semibold text-primary-text">
                     {totalDuration} minutes
                   </span>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#E5E5E5] flex justify-between items-center text-lg">
-                <span className="text-[#666666] font-medium">Total Amount</span>
-                <span className="text-2xl font-bold text-[#C9A227]">
+              <div className="pt-4 border-t border-border-subtle flex justify-between items-center text-lg">
+                <span className="text-secondary-text font-medium">
+                  Total Amount
+                </span>
+                <span className="text-2xl font-bold text-primary-text">
                   {formatPrice(booking.totalPrice)}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#FDE6EF] rounded-xl p-5 mb-8 text-center border border-[#F8C8DC]/30">
-            <p className="text-sm text-[#666666] mb-1">
+          <div className="bg-secondary rounded-xl p-5 mb-8 text-center border border-border-subtle/30">
+            <p className="text-sm text-secondary-text mb-1">
               A confirmation has been sent to
             </p>
-            <p className="font-semibold text-[#333333]">
+            <p className="font-semibold text-primary-text">
               {booking.customerEmail}
             </p>
-            <p className="text-xs text-[#888] mt-2">
+            <p className="text-xs text-muted-text mt-2">
               (Check spam if not received • Reminders will be sent 24h & 1h
               before)
             </p>
@@ -251,7 +253,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
           <Button
             variant="primary"
             size="lg"
-            className="w-full bg-[#C9A227] hover:bg-[#b38c1f] text-white"
+            className="w-full bg-primary text-white"
             onClick={onBookAnother}
           >
             Book Another Appointment

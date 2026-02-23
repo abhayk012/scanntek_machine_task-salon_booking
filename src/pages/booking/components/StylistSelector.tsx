@@ -24,7 +24,7 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
 }) => {
   if (!serviceId) {
     return (
-      <div className="text-center py-8 text-[#999999]">
+      <div className="text-center py-8 text-muted-text">
         Please select a service first
       </div>
     );
@@ -34,7 +34,7 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
 
   if (availableStylists.length === 0) {
     return (
-      <div className="text-center py-8 text-[#999999]">
+      <div className="text-center py-8 text-muted-text">
         No stylists available for this service
       </div>
     );
@@ -42,7 +42,7 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
 
   return (
     <div>
-      <h3 className="text-2xl font-semibold text-[#333333] mb-4">
+      <h3 className="text-2xl font-semibold text-primary-text mb-4">
         2. Choose Your Stylist
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -57,15 +57,15 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
               className={cn(
                 "cursor-pointer transition-elegant",
                 isSelected
-                  ? "ring-2 ring-[#F8C8DC] bg-[#FDE6EF]"
-                  : "hover:ring-2 hover:ring-[#F8C8DC]/50",
+                  ? "ring-2 ring-primary bg-secondary"
+                  : "hover:ring-2 hover:ring-primary/50",
               )}
             >
               <CardHeader className="text-center">
                 <LazyImage
                   src={stylist.photoUrl}
                   alt={stylist.name}
-                  className="w-24 h-24 mx-auto rounded-full mb-3 border-2 border-[#F8C8DC]"
+                  className="w-24 h-24 mx-auto rounded-full mb-3 border-2 border-border-subtle"
                 />
                 <CardTitle className="text-xl">{stylist.name}</CardTitle>
                 <CardDescription>
@@ -73,7 +73,7 @@ const StylistSelector: React.FC<StylistSelectorProps> = ({
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-2xl font-bold text-[#C9A227]">
+                <div className="text-2xl font-bold text-primary-text">
                   {formatPrice(price)}
                 </div>
               </CardContent>

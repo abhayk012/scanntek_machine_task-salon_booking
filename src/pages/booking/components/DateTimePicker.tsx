@@ -83,7 +83,7 @@ const DateTimePicker: React.FC<DateTimePickerProps> = ({
               </p>
               <Button
                 onClick={handleNextAvailable}
-                className="w-full h-14 bg-zinc-900 hover:bg-black text-white font-bold uppercase tracking-widest rounded-lg"
+                className="w-full h-14 bg-primary hover:bg-zinc-800 text-white font-bold uppercase tracking-widest rounded-lg"
               >
                 Go to next available
               </Button>

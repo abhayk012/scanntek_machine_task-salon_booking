@@ -79,7 +79,7 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({
         <div className="p-6 space-y-6">
           {currentStep === "checkout" && date && timeSlot ? (
             <div className="pb-6 border-b border-zinc-50 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center text-white shrink-0 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shrink-0 shadow-sm">
                 <Calendar className="w-5 h-5" />
               </div>
               <div className="flex-1 min-w-0">
@@ -261,7 +261,7 @@ const PriceSummary: React.FC<PriceSummaryProps> = ({
             "w-full py-4 rounded-lg font-bold text-sm uppercase tracking-widest transition-all",
             isNextDisabled
               ? "bg-zinc-100 text-zinc-400 cursor-not-allowed"
-              : "bg-zinc-900 text-white hover:bg-black active:scale-[0.98]",
+              : "bg-primary text-white hover:bg-zinc-800 active:scale-[0.98]",
           )}
         >
           Next

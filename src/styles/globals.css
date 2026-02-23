@@ -14,16 +14,14 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Modern Luxury Salon Palette (2026 Trends) */
-  --color-soft-pink: #e8c1c5;
-  --color-blush: #f4c2c2;
-  --color-luxury-gold: #d4af37;
-  --color-rose-gold: #b76e79;
-  --color-warm-white: #fdfdfd;
-  --color-soft-beige: #f5f0e9;
-  --color-deep-charcoal: #2c2c2c;
-  --color-muted-taupe: #a89f94;
-  --color-light-gray: #e0e0e0;
+  /* Black and White Theme Palette */
+  --color-primary-text: #111111;
+  --color-secondary-text: #525252;
+  --color-muted-text: #737373;
+  --color-bg-white: #ffffff;
+  --color-section-bg: #f5f5f5;
+  --color-border-subtle: #e5e5e5;
+  --color-accent-charcoal: #1f1f1f;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -48,25 +46,25 @@
 :root {
   --radius: 0.875rem;
 
-  /* Modern Luxury Theme Variables */
-  --background: #fdfdfd; /* Warm White */
-  --foreground: #2c2c2c; /* Deep Charcoal */
+  /* Black and White Theme Variables */
+  --background: #ffffff;
+  --foreground: #111111;
   --card: #ffffff;
-  --card-foreground: #2c2c2c;
+  --card-foreground: #111111;
   --popover: #ffffff;
-  --popover-foreground: #2c2c2c;
-  --primary: #e8c1c5; /* Soft Pink */
+  --popover-foreground: #111111;
+  --primary: #111111;
   --primary-foreground: #ffffff;
-  --secondary: #f5f0e9; /* Soft Beige */
-  --secondary-foreground: #2c2c2c;
-  --muted: #f5f0e9;
-  --muted-foreground: #a89f94;
-  --accent: #d4af37; /* Gold */
+  --secondary: #f5f5f5;
+  --secondary-foreground: #525252;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #1f1f1f;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
-  --border: rgba(44, 44, 44, 0.1);
-  --input: rgba(44, 44, 44, 0.1);
-  --ring: #e8c1c5;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #111111;
 }
 
 @layer base {
@@ -76,7 +74,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", "Manrope", sans-serif;
   }
 
   /* h1,
@@ -92,11 +90,11 @@
 @layer utilities {
   /* Elegant Card Shadow */
   .card-shadow {
-    box-shadow: 0 4px 20px rgba(248, 200, 220, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
   .card-shadow-hover {
-    box-shadow: 0 8px 30px rgba(248, 200, 220, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   }
 
   /* Soft Shadows */

@@ -16,7 +16,7 @@ const StylistsPreview: React.FC = () => {
   const featuredStylists = stylists.slice(0, 3);
 
   return (
-    <section className="py-24 bg-soft-beige">
+    <section className="py-24 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Master Stylists"
@@ -37,15 +37,15 @@ const StylistsPreview: React.FC = () => {
                     alt={stylist.name}
                     className="w-40 h-40 rounded-full border-4 border-white shadow-xl object-cover"
                   />
-                  <div className="absolute -bottom-2 -right-2 bg-luxury-gold text-white px-2 py-1 rounded-full flex items-center gap-1 font-bold text-[10px] border-2 border-white shadow-lg">
+                  <div className="absolute -bottom-2 -right-2 bg-primary text-white px-2 py-1 rounded-full flex items-center gap-1 font-bold text-[10px] border-2 border-white shadow-lg">
                     <Star className="w-3 h-3 fill-white" />
                     {stylist.rating}
                   </div>
                 </div>
-                <CardTitle className="text-2xl font-bold tracking-tight text-deep-charcoal">
+                <CardTitle className="text-2xl font-bold tracking-tight text-primary-text">
                   {stylist.name}
                 </CardTitle>
-                <CardDescription className="text-xs font-bold uppercase tracking-widest text-[#B76E79] flex items-center justify-center gap-2">
+                <CardDescription className="text-xs font-bold uppercase tracking-widest text-secondary-text flex items-center justify-center gap-2">
                   <Award className="w-3 h-3" />
                   <span>{stylist.experience} Years of Mastery</span>
                 </CardDescription>
@@ -55,7 +55,7 @@ const StylistsPreview: React.FC = () => {
                   {stylist.services.slice(0, 2).map((serviceId) => (
                     <span
                       key={serviceId}
-                      className="px-4 py-1 bg-soft-pink/20 text-[#B76E79] text-[10px] font-bold uppercase tracking-widest rounded-full"
+                      className="px-4 py-1 bg-border-subtle/50 text-secondary-text text-[10px] font-bold uppercase tracking-widest rounded-full"
                     >
                       {serviceId.replace("-", " ")}
                     </span>

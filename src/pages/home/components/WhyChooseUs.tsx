@@ -40,14 +40,14 @@ const WhyChooseUs: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {features.map((feature, index) => (
             <div key={index} className="text-center space-y-6">
-              <div className="mx-auto w-24 h-24 bg-[#f5f0e9] rounded-full flex items-center justify-center text-[#2c2c2c] hover:text-[#e8c1c5] transition-all cursor-default shadow-sm border border-zinc-50">
+              <div className="mx-auto w-24 h-24 bg-section-bg rounded-full flex items-center justify-center text-primary-text hover:text-accent-charcoal transition-all cursor-default shadow-sm border border-zinc-100">
                 {feature.icon}
               </div>
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2c2c2c] mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary-text mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-[#a89f94] leading-relaxed font-medium">
+                <p className="text-sm text-muted-text leading-relaxed font-medium">
                   {feature.description}
                 </p>
               </div>

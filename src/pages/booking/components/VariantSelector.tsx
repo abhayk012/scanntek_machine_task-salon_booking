@@ -45,7 +45,7 @@ const VariantSelector: React.FC<VariantSelectorProps> = ({
             <div className="flex items-center gap-3">
               <ServiceIcon
                 name={service!.icon}
-                className="w-8 h-8 text-[#B76E79]"
+                className="w-8 h-8 text-primary-text"
               />
               <h3 className="text-xl font-bold text-black uppercase tracking-tight">
                 {service!.name}

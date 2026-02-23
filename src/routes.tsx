@@ -6,8 +6,8 @@ import Booking from "./pages/booking/Booking";
 import ServiceOptions from "./pages/booking/ServiceOptions";
 import History from "./pages/booking/History";
 import StylistsPage from "./pages/stylists/StylistsPage";
-import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
 
 // Scroll to Top component to reset scroll position on route change
 const ScrollToTop = () => {
@@ -40,7 +40,7 @@ const LayoutWrapper = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Navbar />
+      <Header />
       <main className="grow">
         <Routes>
           {routesConfig.map(({ path, element, title }) => (

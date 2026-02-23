@@ -12,17 +12,19 @@ const buttonVariants = cva(
         default:
           "bg-black text-white hover:bg-zinc-800 shadow-md hover:shadow-lg",
         primary:
-          "bg-[#E8C1C5] text-white hover:bg-[#d8b1b5] shadow-md hover:shadow-lg rounded-full",
+          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg rounded-full",
         secondary:
-          "bg-[#F5F0E9] text-[#2C2C2C] hover:bg-[#ebe5dd] rounded-full",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full",
         outline:
-          "border-2 border-[#E8C1C5] text-[#2C2C2C] bg-white hover:bg-[#F5F0E9] rounded-full",
-        gold: "bg-[#D4AF37] text-white hover:bg-[#c39f2f] shadow-md hover:shadow-lg rounded-full",
-        ghost: "hover:bg-[#F5F0E9] hover:text-[#2C2C2C] rounded-full",
-        luxury: "bg-black text-white hover:bg-zinc-800 rounded-lg", // Keep for booking flow
+          "border-2 border-primary text-primary bg-white hover:bg-secondary rounded-full",
+        gold: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-md hover:shadow-lg rounded-full",
+        ghost:
+          "hover:bg-secondary hover:text-secondary-foreground rounded-full",
+        luxury:
+          "bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg", // Keep for booking flow
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 rounded-full",
-        link: "text-[#B76E79] underline-offset-4 hover:underline",
+        link: "text-accent-charcoal underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-6 py-2 has-[>svg]:px-4",

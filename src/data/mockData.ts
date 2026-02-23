@@ -304,7 +304,7 @@ export const MOCK_BOOKINGS = [
   {
     id: "b1",
     status: "upcoming",
-    price: "$90.00",
+    price: "₹90.00",
     serviceName: "Signature Cut",
     date: "2024-03-15",
     time: "10:30 AM",
@@ -313,7 +313,7 @@ export const MOCK_BOOKINGS = [
   {
     id: "b2",
     status: "completed",
-    price: "$65.00",
+    price: "₹65.00",
     serviceName: "Gel Manicure",
     date: "2024-02-10",
     time: "02:00 PM",

@@ -63,7 +63,7 @@ const ServiceSelector: React.FC<ServiceSelectorProps> = ({
                   {service.hasVariablePricing ? (
                     <span>Price varies</span>
                   ) : (
-                    <span>US$70.00</span> // Static for now as per image reference
+                    <span>₹70.00</span> // Static for now as per image reference
                   )}
                   <span className="text-zinc-300">•</span>
                   <span>{service.duration} min</span>
@@ -95,7 +95,7 @@ const ServiceSelector: React.FC<ServiceSelectorProps> = ({
             "px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest transition-all",
             selectedServiceIds.length === 0
               ? "bg-zinc-100 text-zinc-400 cursor-not-allowed"
-              : "bg-black text-white hover:bg-zinc-800 active:scale-[0.98]",
+              : "bg-primary text-white hover:bg-zinc-800 active:scale-[0.98]",
           )}
         >
           Continue

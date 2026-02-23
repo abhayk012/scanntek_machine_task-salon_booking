@@ -13,18 +13,18 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#2c2c2c] mt-20 text-white">
+    <footer className="bg-primary-text mt-20 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* About Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
-              <Flower2 className="w-8 h-8 text-[#e8c1c5]" />
+              <Flower2 className="w-8 h-8 text-bg-white" />
               <span className="text-2xl font-bold tracking-tight">
                 Bella Salon
               </span>
             </div>
-            <p className="text-[#a89f94] text-sm leading-relaxed mb-6">
+            <p className="text-muted-text text-sm leading-relaxed mb-6">
               2026's destination for premium beauty. We blend modern wellness
               trends with timeless elegance to revitalize your spirit.
             </p>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-[#a89f94] hover:text-[#e8c1c5] transition-all text-sm"
+                  className="text-muted-text hover:text-bg-white transition-all text-sm"
                 >
                   Home
                 </Link>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/services"
-                  className="text-[#a89f94] hover:text-[#e8c1c5] transition-all text-sm"
+                  className="text-muted-text hover:text-bg-white transition-all text-sm"
                 >
                   Services
                 </Link>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/booking"
-                  className="text-[#a89f94] hover:text-[#e8c1c5] transition-all text-sm"
+                  className="text-muted-text hover:text-bg-white transition-all text-sm"
                 >
                   Book Appointment
                 </Link>
@@ -68,17 +68,17 @@ const Footer: React.FC = () => {
             <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">
               Contact Us
             </h3>
-            <ul className="space-y-4 text-sm text-[#a89f94]">
+            <ul className="space-y-4 text-sm text-muted-text">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-[#e8c1c5] shrink-0" />
+                <MapPin className="w-5 h-5 text-bg-white shrink-0" />
                 <span>123 Beauty Lane, Fashion District</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#e8c1c5] shrink-0" />
+                <Phone className="w-5 h-5 text-bg-white shrink-0" />
                 <span>+91 98765 43210</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#e8c1c5] shrink-0" />
+                <Mail className="w-5 h-5 text-bg-white shrink-0" />
                 <span>hello@bellasalon.com</span>
               </li>
             </ul>
@@ -96,9 +96,9 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Your email"
-                className="bg-[#3d3d3d] border-none rounded-l-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-[#e8c1c5] outline-none"
+                className="bg-accent-charcoal border-none rounded-l-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-bg-white outline-none"
               />
-              <button className="bg-[#e8c1c5] text-white px-4 py-2 rounded-r-lg hover:bg-[#d8b1b5] transition-all flex items-center justify-center">
+              <button className="bg-bg-white text-primary-text px-4 py-2 rounded-r-lg hover:bg-border-subtle transition-all flex items-center justify-center">
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media & Copyright */}
-        <div className="mt-16 pt-8 border-t border-[#3d3d3d]">
+        <div className="mt-16 pt-8 border-t border-accent-charcoal">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <p className="text-xs text-[#a89f94] font-medium tracking-wide">
               © 2026 BELLA SALON. ALL RIGHTS RESERVED.
@@ -114,21 +114,21 @@ const Footer: React.FC = () => {
             <div className="flex space-x-6">
               <a
                 href="#"
-                className="text-[#a89f94] hover:text-[#e8c1c5] transition-all flex items-center gap-2 text-sm"
+                className="text-muted-text hover:text-bg-white transition-all flex items-center gap-2 text-sm"
               >
                 <Instagram className="w-4 h-4" />
                 <span className="hidden sm:inline">Instagram</span>
               </a>
               <a
                 href="#"
-                className="text-[#a89f94] hover:text-[#e8c1c5] transition-all flex items-center gap-2 text-sm"
+                className="text-muted-text hover:text-bg-white transition-all flex items-center gap-2 text-sm"
               >
                 <Facebook className="w-4 h-4" />
                 <span className="hidden sm:inline">Facebook</span>
               </a>
               <a
                 href="#"
-                className="text-[#a89f94] hover:text-[#e8c1c5] transition-all flex items-center gap-2 text-sm"
+                className="text-muted-text hover:text-bg-white transition-all flex items-center gap-2 text-sm"
               >
                 <Twitter className="w-4 h-4" />
                 <span className="hidden sm:inline">X</span>

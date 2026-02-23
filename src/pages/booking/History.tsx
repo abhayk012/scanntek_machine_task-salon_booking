@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const History: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#fdfdfd] py-12 md:py-20">
+    <div className="min-h-screen bg-background py-12 md:py-20 font-inter">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <h1 className="text-4xl font-bold text-zinc-900 tracking-tight mb-3">
@@ -23,7 +23,7 @@ const History: React.FC = () => {
           {MOCK_BOOKINGS.map((booking) => (
             <Card
               key={booking.id}
-              className="group overflow-hidden border-zinc-100 hover:border-[#F8C8DC]/50 transition-all hover:shadow-xl hover:shadow-[#FDE6EF]/20"
+              className="group overflow-hidden border-zinc-100 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5"
             >
               <CardContent className="p-0">
                 <div className="flex flex-col md:flex-row">
@@ -32,7 +32,7 @@ const History: React.FC = () => {
                     className={cn(
                       "w-full md:w-2 py-4 md:py-0",
                       booking.status === "upcoming"
-                        ? "bg-[#B76E79]"
+                        ? "bg-primary"
                         : "bg-zinc-200",
                     )}
                   />
@@ -45,14 +45,14 @@ const History: React.FC = () => {
                             className={cn(
                               "px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider",
                               booking.status === "upcoming"
-                                ? "bg-[#FDE6EF] text-[#B76E79]"
+                                ? "bg-secondary text-primary-text"
                                 : "bg-zinc-100 text-zinc-500",
                             )}
                           >
                             {booking.status}
                           </span>
                           <span className="text-zinc-300">•</span>
-                          <span className="text-sm font-semibold text-[#D4AF37]">
+                          <span className="text-sm font-semibold text-primary-text">
                             {booking.price}
                           </span>
                         </div>

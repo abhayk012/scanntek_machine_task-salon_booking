@@ -16,14 +16,16 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
   return (
     <div className={cn("mb-12", centered && "text-center", className)}>
-      <h2 className="text-4xl md:text-5xl font-bold text-[#333333] mb-3">
+      <h2 className="text-4xl md:text-5xl font-bold text-primary-text mb-3">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg text-[#666666] max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-lg text-secondary-text max-w-2xl mx-auto">
+          {subtitle}
+        </p>
       )}
       <div className="mt-4 flex justify-center">
-        <div className="h-1 w-20 bg-gradient-to-r from-[#F8C8DC] to-[#C9A227] rounded-full" />
+        <div className="h-1 w-20 bg-primary-text rounded-full" />
       </div>
     </div>
   );

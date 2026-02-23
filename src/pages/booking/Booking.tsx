@@ -96,7 +96,7 @@ export default function Booking() {
   // Show success message if booking is completed
   if (completedBooking) {
     return (
-      <div className="min-h-screen bg-ivory py-20">
+      <div className="min-h-screen bg-background py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SuccessMessage
             booking={completedBooking}
@@ -147,7 +147,7 @@ export default function Booking() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-12 md:py-20 font-['Poppins',sans-serif]">
+    <div className="min-h-screen bg-white py-12 md:py-20 font-inter">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Active Step */}

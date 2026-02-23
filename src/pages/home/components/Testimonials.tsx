@@ -39,7 +39,7 @@ const Testimonials = () => {
   const duplicatedReviews = [...reviews, ...reviews, ...reviews];
 
   return (
-    <div className="py-24 bg-warm-white overflow-hidden">
+    <div className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Title Section */}
         <motion.div
@@ -49,10 +49,10 @@ const Testimonials = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-deep-charcoal mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary-text mb-6">
             Words of Radiance
           </h2>
-          <p className="text-sm md:text-base text-muted-taupe font-bold uppercase tracking-widest">
+          <p className="text-sm md:text-base text-muted-text font-bold uppercase tracking-widest">
             A testament to our commitment to beauty and wellness.
           </p>
         </motion.div>
@@ -91,7 +91,7 @@ const Testimonials = () => {
               >
                 {/* User Info */}
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-soft-beige shrink-0 border-2 border-white shadow-md">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-secondary shrink-0 border-2 border-white shadow-md">
                     <LazyImage
                       src={review.avatar}
                       alt={review.name}
@@ -99,17 +99,17 @@ const Testimonials = () => {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="text-lg font-bold text-deep-charcoal">
+                    <h3 className="text-lg font-bold text-primary-text">
                       {review.name}
                     </h3>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#B76E79]">
+                    <p className="text-xs font-bold uppercase tracking-widest text-secondary-text">
                       {review.role}
                     </p>
                   </div>
                 </div>
 
                 {/* Review Text */}
-                <p className="text-sm md:text-base text-deep-charcoal/80 leading-relaxed font-medium italic">
+                <p className="text-sm md:text-base text-primary-text/80 leading-relaxed font-medium italic">
                   "{review.review}"
                 </p>
               </motion.div>
@@ -118,8 +118,8 @@ const Testimonials = () => {
         </div>
 
         {/* Gradient Overlays */}
-        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-linear-to-r from-warm-white to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-linear-to-l from-warm-white to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-linear-to-r from-background to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-linear-to-l from-background to-transparent pointer-events-none" />
       </div>
     </div>
   );

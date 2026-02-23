@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Flower2, Menu, X } from "lucide-react";
 import NotificationBell from "./NotificationBell";
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -20,13 +20,13 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-elegant border-b border-[#F8C8DC]/20">
+    <nav className="sticky top-0 z-50 backdrop-elegant border-b border-border-subtle/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Flower2 className="w-8 h-8 text-[#E8C1C5]" />
-            <span className="text-2xl font-bold text-gradient-gold">
+            <Flower2 className="w-8 h-8 text-primary-text" />
+            <span className="text-2xl font-bold text-primary-text">
               Bella Salon
             </span>
           </Link>
@@ -40,13 +40,13 @@ const Navbar: React.FC = () => {
                 className={cn(
                   "text-sm font-bold uppercase tracking-widest transition-all relative py-2",
                   isActive(link.path)
-                    ? "text-[#B76E79]"
-                    : "text-[#2C2C2C] hover:text-[#B76E79]",
+                    ? "text-primary-text"
+                    : "text-secondary-text hover:text-primary-text",
                 )}
               >
                 {link.name}
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#B76E79] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-text rounded-full" />
                 )}
               </Link>
             ))}
@@ -66,12 +66,12 @@ const Navbar: React.FC = () => {
             <NotificationBell />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-[#FDE6EF] transition-elegant"
+              className="p-2 rounded-lg hover:bg-section-bg transition-elegant"
             >
               {isMenuOpen ? (
-                <X className="w-6 h-6 text-[#2C2C2C]" />
+                <X className="w-6 h-6 text-primary-text" />
               ) : (
-                <Menu className="w-6 h-6 text-[#2C2C2C]" />
+                <Menu className="w-6 h-6 text-primary-text" />
               )}
             </button>
           </div>
@@ -88,8 +88,8 @@ const Navbar: React.FC = () => {
                 className={cn(
                   "block px-4 py-3 rounded-lg text-sm font-bold uppercase tracking-widest transition-elegant",
                   isActive(link.path)
-                    ? "bg-[#FDE6EF] text-[#B76E79]"
-                    : "text-[#2C2C2C] hover:bg-[#FDE6EF]",
+                    ? "bg-section-bg text-primary-text"
+                    : "text-secondary-text hover:bg-section-bg",
                 )}
               >
                 {link.name}
@@ -111,4 +111,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Header;

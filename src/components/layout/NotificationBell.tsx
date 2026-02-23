@@ -19,11 +19,11 @@ const NotificationBell: React.FC = () => {
   const getIcon = (type: Notification["type"]) => {
     switch (type) {
       case "upcoming":
-        return <CheckCircle2 className="w-4 h-4 text-[#B76E79]" />;
+        return <CheckCircle2 className="w-4 h-4 text-primary-text" />;
       case "promotion":
-        return <Info className="w-4 h-4 text-[#D4AF37]" />;
+        return <Info className="w-4 h-4 text-accent-charcoal" />;
       case "reminder":
-        return <Clock className="w-4 h-4 text-zinc-500" />;
+        return <Clock className="w-4 h-4 text-secondary-text" />;
     }
   };
 
@@ -33,9 +33,9 @@ const NotificationBell: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="relative p-2 rounded-full hover:bg-zinc-100 transition-colors"
       >
-        <Bell className="w-6 h-6 text-zinc-700" />
+        <Bell className="w-6 h-6 text-primary-text" />
         {unreadCount > 0 && (
-          <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-[#B76E79] text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white">
+          <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-primary text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white">
             {unreadCount}
           </span>
         )}
@@ -53,7 +53,7 @@ const NotificationBell: React.FC = () => {
               {unreadCount > 0 && (
                 <button
                   onClick={markAllAsRead}
-                  className="text-xs text-[#B76E79] hover:underline font-medium"
+                  className="text-xs text-primary-text hover:underline font-medium"
                 >
                   Mark all as read
                 </button>
@@ -67,7 +67,7 @@ const NotificationBell: React.FC = () => {
                     key={n.id}
                     className={cn(
                       "p-4 border-b border-zinc-50 last:border-0 transition-colors hover:bg-zinc-50",
-                      !n.read && "bg-[#FDE6EF]/10",
+                      !n.read && "bg-secondary/20",
                     )}
                   >
                     <div className="flex gap-3">
@@ -84,7 +84,7 @@ const NotificationBell: React.FC = () => {
                         </p>
                       </div>
                       {!n.read && (
-                        <div className="w-2 h-2 rounded-full bg-[#B76E79] mt-1" />
+                        <div className="w-2 h-2 rounded-full bg-primary mt-1" />
                       )}
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const NotificationBell: React.FC = () => {
 
             <div className="p-3 border-top border-zinc-50 text-center bg-zinc-50/50">
               <Link to="/history" onClick={() => setIsOpen(false)}>
-                <Button variant="link" size="xs" className="text-[#B76E79]">
+                <Button variant="link" size="xs" className="text-primary-text">
                   View all activity
                 </Button>
               </Link>

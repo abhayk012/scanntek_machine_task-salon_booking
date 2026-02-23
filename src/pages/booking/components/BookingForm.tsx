@@ -26,7 +26,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   disabled = false,
 }) => {
   const form = useForm<BookingFormValues>({
-    resolver: zodResolver(bookingFormSchema),
+    resolver: zodResolver(bookingFormSchema) as any,
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -42,7 +42,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   };
 
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-left-4 duration-500 font-['Poppins',sans-serif]">
+    <div className="space-y-8 animate-in fade-in slide-in-from-left-4 duration-500 font-inter">
       <h2 className="text-3xl font-bold text-black tracking-tight">
         Your Information
       </h2>
