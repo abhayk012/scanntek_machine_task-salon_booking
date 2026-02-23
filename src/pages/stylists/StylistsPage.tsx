@@ -52,18 +52,19 @@ const StylistsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-warm-white">
       {/* Header section with refined aesthetics */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden bg-[url('https://media.istockphoto.com/id/511777075/photo/teacher-helping-students-training-to-become-hairdressers.jpg?s=612x612&w=0&k=20&c=o1adWObcvGOzxyVxLpw1vfk-7Aav-WAipygsQnWHUhI=')] bg-cover bg-center">
+          <div className="absolute inset-0 bg-black/20" />
         <div className="absolute top-0 left-0 w-full h-full bg-[#F5F0E9]/30 -z-10" />
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-[#FDE6EF]/30 rounded-full blur-3xl -z-10" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 mb-6 tracking-tight leading-[1.1]">
+              <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 tracking-tight leading-[1.1]">
                 The Visionaries <br />
-                <span className="text-[#B76E79]">of Bella Salon</span>
+                <span className="text-[#e02241]">of Bella Salon</span>
               </h1>
-              <p className="text-xl text-zinc-500 font-medium leading-relaxed">
+              <p className="text-xl text-black font-medium leading-relaxed">
                 Meet the world-class professionals dedicated to revealing your
                 inner radiance through expert artistry and personalized care.
               </p>
