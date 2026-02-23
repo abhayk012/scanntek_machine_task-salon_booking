@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
                     <Button
                       variant="outline"
                       size="xl"
-                      className="w-full border-white text-white hover:bg-white hover:text-black"
+                      className="w-full border-white bg-white text-black hover:bg-white hover:text-black"
                     >
                       Explore Services
                     </Button>
